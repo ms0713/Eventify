@@ -1,0 +1,24 @@
+version: '3.4'
+
+services:
+  eventify.api:
+    image: ${DOCKER_REGISTRY-}eventifyapi
+    container_name: Eventify.Api
+    build:
+      context: src
+      dockerfile: API/Eventify.Api/Dockerfile
+    ports:
+       - 5000:8080
+       - 5001:8081 
+
+  eventify.database:
+    image: postgres:latest
+    container_name: Eventify.Database
+    environment:
+      - POSTGRES_DB=eventify
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    volumes:
+      - ./.containers/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
