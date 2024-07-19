@@ -1,4 +1,5 @@
 using Eventify.Api.Extentions;
+using Eventify.Api.Middleware;
 using Eventify.Common.Application;
 using Eventify.Common.Infrastructure;
 using Eventify.Modules.Events.Infrastructure;
@@ -14,7 +15,8 @@ builder.Services.AddSwaggerGen(options =>
     options.CustomSchemaIds(t => t.FullName?.Replace("+", "."));
 });
 
-
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
 
 builder.Services.AddApplication([Eventify.Modules.Events.Application.AssemblyReference.Assembly]);
 
@@ -37,5 +39,7 @@ if (app.Environment.IsDevelopment())
 EventsModule.MapEndpoints(app);
 
 app.UseSerilogRequestLogging();
+
+app.UseExceptionHandler();
 
 app.Run();
