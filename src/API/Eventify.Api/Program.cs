@@ -2,6 +2,7 @@ using Eventify.Api.Extentions;
 using Eventify.Api.Middleware;
 using Eventify.Common.Application;
 using Eventify.Common.Infrastructure;
+using Eventify.Common.Presentation.Endpoints;
 using Eventify.Modules.Events.Infrastructure;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -49,7 +50,7 @@ if (app.Environment.IsDevelopment())
     app.ApplyMigrations();
 }
 
-EventsModule.MapEndpoints(app);
+app.MapEndpoints();
 
 app.MapHealthChecks("health", new HealthCheckOptions 
 {

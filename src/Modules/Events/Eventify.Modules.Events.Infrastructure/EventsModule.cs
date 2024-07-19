@@ -1,5 +1,4 @@
-﻿using Eventify.Common.Application.Clock;
-using Eventify.Common.Application.Data;
+﻿using Eventify.Common.Presentation.Endpoints;
 using Eventify.Modules.Events.Application.Abstractions.Data;
 using Eventify.Modules.Events.Domain.Categories;
 using Eventify.Modules.Events.Domain.Events;
@@ -8,39 +7,20 @@ using Eventify.Modules.Events.Infrastructure.Categories;
 using Eventify.Modules.Events.Infrastructure.Database;
 using Eventify.Modules.Events.Infrastructure.Events;
 using Eventify.Modules.Events.Infrastructure.TicketTypes;
-using Eventify.Modules.Events.Presentation.Categories;
-using Eventify.Modules.Events.Presentation.Events;
-using Eventify.Modules.Events.Presentation.TicketTypes;
-using FluentValidation;
-using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.DependencyInjection.Extensions;
-using Npgsql;
 
 namespace Eventify.Modules.Events.Infrastructure;
 public static class EventsModule
 {
-    public static void MapEndpoints(IEndpointRouteBuilder app)
-    {
-        TicketTypeEndpoints.MapEndpoints(app);
-        CategoryEndpoints.MapEndpoints(app);
-        EventEndpoints.MapEndpoints(app);
-
-    }
-
     public static IServiceCollection AddEventsModule(
         this IServiceCollection services,
         IConfiguration configuration)
     {
-        services.AddMediatR(config =>
-        {
-            config.RegisterServicesFromAssembly(Application.AssemblyReference.Assembly);
-        });
-        services.AddValidatorsFromAssembly(Application.AssemblyReference.Assembly, includeInternalTypes:true);
-
+        services.AddEndpoints(Presentation.AssemblyReference.Assembly);
+        
         services.AddInfrastructure(configuration);
 
         return services;

@@ -1,15 +1,14 @@
-﻿using Eventify.Modules.Events.Application.Events;
+﻿using Eventify.Common.Presentation.Endpoints;
 using Eventify.Modules.Events.Application.Events.GetEvent;
-using Eventify.Modules.Events.Presentation;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 
 namespace Eventify.Modules.Events.Presentation.Events;
-internal static class GetEvent
+internal sealed class GetEvent : IEndpoint
 {
-    public static void MapEndpoint(IEndpointRouteBuilder app)
+    public void MapEndpoint(IEndpointRouteBuilder app)
     {
         app.MapGet("events/{id}", async (Guid id, ISender sender) =>
         {
