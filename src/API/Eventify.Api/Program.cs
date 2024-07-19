@@ -2,14 +2,19 @@ using Eventify.Api.Extentions;
 using Eventify.Common.Application;
 using Eventify.Common.Infrastructure;
 using Eventify.Modules.Events.Infrastructure;
+using Serilog;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((context, loggerConfig) => loggerConfig.ReadFrom.Configuration(context.Configuration));
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
 {
     options.CustomSchemaIds(t => t.FullName?.Replace("+", "."));
 });
+
+
 
 builder.Services.AddApplication([Eventify.Modules.Events.Application.AssemblyReference.Assembly]);
 
@@ -30,5 +35,7 @@ if (app.Environment.IsDevelopment())
 }
 
 EventsModule.MapEndpoints(app);
+
+app.UseSerilogRequestLogging();
 
 app.Run();
