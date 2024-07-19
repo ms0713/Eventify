@@ -1,4 +1,4 @@
-﻿namespace Eventify.Modules.Events.Domain.Abstractions;
+﻿namespace Eventify.Common.Domain;
 
 public enum ErrorType
 {

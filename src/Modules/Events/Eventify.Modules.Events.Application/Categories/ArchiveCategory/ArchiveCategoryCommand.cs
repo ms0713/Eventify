@@ -1,4 +1,4 @@
-﻿using Eventify.Modules.Events.Application.Abstractions.Messaging;
+﻿using Eventify.Common.Application.Messaging;
 
 namespace Eventify.Modules.Events.Application.Categories.ArchiveCategory;
 

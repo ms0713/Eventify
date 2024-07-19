@@ -1,6 +1,6 @@
-﻿using Eventify.Modules.Events.Application.TicketTypes.GetTicketType;
+﻿using Eventify.Common.Domain;
+using Eventify.Modules.Events.Application.TicketTypes.GetTicketType;
 using Eventify.Modules.Events.Application.TicketTypes.GetTicketTypes;
-using Eventify.Modules.Events.Domain.Abstractions;
 using Eventify.Modules.Events.Presentation.ApiResults;
 using MediatR;
 using Microsoft.AspNetCore.Builder;

@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
 
-namespace Eventify.Modules.Events.Application.Abstractions.Data;
+namespace Eventify.Common.Application.Data;
 public interface IDbConnectionFactory
 {
     ValueTask<DbConnection> OpenConnectionAsync();

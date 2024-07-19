@@ -1,4 +1,6 @@
-﻿namespace Eventify.Modules.Events.Domain.Abstractions;
+﻿using Eventify.Common.Domain;
+
+namespace Eventify.Common.Domain;
 public sealed record ValidationError : Error
 {
     public ValidationError(Error[] errors)

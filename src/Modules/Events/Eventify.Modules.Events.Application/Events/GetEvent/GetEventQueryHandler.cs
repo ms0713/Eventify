@@ -1,6 +1,6 @@
 ﻿using System.Data.Common;
 using Dapper;
-using Eventify.Modules.Events.Application.Abstractions.Data;
+using Eventify.Common.Application.Data;
 using MediatR;
 
 namespace Eventify.Modules.Events.Application.Events.GetEvent;

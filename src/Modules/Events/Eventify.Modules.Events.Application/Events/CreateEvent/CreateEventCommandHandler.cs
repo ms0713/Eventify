@@ -1,10 +1,9 @@
-﻿using Eventify.Modules.Events.Application.Abstractions.Clock;
+﻿using Eventify.Common.Application.Clock;
+using Eventify.Common.Application.Messaging;
+using Eventify.Common.Domain;
 using Eventify.Modules.Events.Application.Abstractions.Data;
-using Eventify.Modules.Events.Application.Abstractions.Messaging;
-using Eventify.Modules.Events.Domain.Abstractions;
 using Eventify.Modules.Events.Domain.Categories;
 using Eventify.Modules.Events.Domain.Events;
-using MediatR;
 
 namespace Eventify.Modules.Events.Application.Events.CreateEvent;
 internal sealed class CreateEventCommandHandler(

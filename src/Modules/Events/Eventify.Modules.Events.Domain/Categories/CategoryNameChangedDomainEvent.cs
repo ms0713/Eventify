@@ -1,4 +1,4 @@
-﻿using Eventify.Modules.Events.Domain.Abstractions;
+﻿using Eventify.Common.Domain;
 
 namespace Eventify.Modules.Events.Domain.Categories;
 public sealed class CategoryNameChangedDomainEvent(Guid categoryId, string name) : DomainEvent

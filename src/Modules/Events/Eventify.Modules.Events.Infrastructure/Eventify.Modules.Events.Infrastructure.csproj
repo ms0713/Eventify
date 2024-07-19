@@ -1,13 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Eventify.Common.Infrastructure\Eventify.Common.Infrastructure.csproj" />
     <ProjectReference Include="..\Eventify.Modules.Events.Application\Eventify.Modules.Events.Application.csproj" />
     <ProjectReference Include="..\Eventify.Modules.Events.Presentation\Eventify.Modules.Events.Presentation.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="EFCore.NamingConventions" Version="8.0.3" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
   </ItemGroup>
   
 </Project>

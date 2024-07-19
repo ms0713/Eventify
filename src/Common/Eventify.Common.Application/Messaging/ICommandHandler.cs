@@ -1,7 +1,7 @@
-﻿using Eventify.Modules.Events.Domain.Abstractions;
+﻿using Eventify.Common.Domain;
 using MediatR;
 
-namespace Eventify.Modules.Events.Application.Abstractions.Messaging;
+namespace Eventify.Common.Application.Messaging;
 
 public interface ICommandHandler<in TCommand> : IRequestHandler<TCommand, Result>
     where TCommand : ICommand;

@@ -1,11 +1,10 @@
-﻿using Eventify.Modules.Events.Application.Abstractions.Clock;
+﻿using Eventify.Common.Application.Clock;
+using Eventify.Common.Application.Data;
 using Eventify.Modules.Events.Application.Abstractions.Data;
 using Eventify.Modules.Events.Domain.Categories;
 using Eventify.Modules.Events.Domain.Events;
 using Eventify.Modules.Events.Domain.TicketTypes;
 using Eventify.Modules.Events.Infrastructure.Categories;
-using Eventify.Modules.Events.Infrastructure.Clock;
-using Eventify.Modules.Events.Infrastructure.Data;
 using Eventify.Modules.Events.Infrastructure.Database;
 using Eventify.Modules.Events.Infrastructure.Events;
 using Eventify.Modules.Events.Infrastructure.TicketTypes;
@@ -52,14 +51,6 @@ public static class EventsModule
         IConfiguration configuration)
     {
         string databaseConnectionString = configuration.GetConnectionString("Database");
-
-        NpgsqlDataSource npgsqlDataSource =
-            new NpgsqlDataSourceBuilder(databaseConnectionString).Build();
-        services.TryAddSingleton(npgsqlDataSource);
-
-        services.AddScoped<IDbConnectionFactory, DbConnectionFactory>();
-
-        services.TryAddSingleton<IDateTimeProvider, DateTimeProvider>();
 
         services.AddDbContext<EventsDbContext>(options =>
         options

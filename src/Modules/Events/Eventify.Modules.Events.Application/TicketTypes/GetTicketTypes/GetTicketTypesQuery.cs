@@ -1,4 +1,4 @@
-﻿using Eventify.Modules.Events.Application.Abstractions.Messaging;
+﻿using Eventify.Common.Application.Messaging;
 using Eventify.Modules.Events.Application.TicketTypes.GetTicketType;
 
 namespace Eventify.Modules.Events.Application.TicketTypes.GetTicketTypes;

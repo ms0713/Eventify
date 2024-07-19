@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using Eventify.Common.Domain;
 
-namespace Eventify.Modules.Events.Domain.Abstractions;
+namespace Eventify.Common.Domain;
 public class Result
 {
     public Result(bool isSuccess, Error error)

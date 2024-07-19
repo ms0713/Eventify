@@ -1,4 +1,4 @@
-﻿namespace Eventify.Modules.Events.Domain.Abstractions;
+﻿namespace Eventify.Common.Domain;
 public record Error
 {
     public static readonly Error None = new(string.Empty, string.Empty, ErrorType.Failure);

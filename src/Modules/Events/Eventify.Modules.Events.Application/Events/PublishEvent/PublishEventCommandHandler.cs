@@ -1,6 +1,6 @@
-﻿using Eventify.Modules.Events.Application.Abstractions.Data;
-using Eventify.Modules.Events.Application.Abstractions.Messaging;
-using Eventify.Modules.Events.Domain.Abstractions;
+﻿using Eventify.Common.Application.Messaging;
+using Eventify.Common.Domain;
+using Eventify.Modules.Events.Application.Abstractions.Data;
 using Eventify.Modules.Events.Domain.Events;
 using Eventify.Modules.Events.Domain.TicketTypes;
 

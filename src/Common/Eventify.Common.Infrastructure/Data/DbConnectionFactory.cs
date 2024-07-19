@@ -1,8 +1,8 @@
 ﻿using System.Data.Common;
-using Eventify.Modules.Events.Application.Abstractions.Data;
+using Eventify.Common.Application.Data;
 using Npgsql;
 
-namespace Eventify.Modules.Events.Infrastructure.Data;
+namespace Eventify.Common.Infrastructure.Data;
 internal sealed class DbConnectionFactory(NpgsqlDataSource dataSource) : IDbConnectionFactory
 {
     public async ValueTask<DbConnection> OpenConnectionAsync()

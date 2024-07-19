@@ -1,9 +1,9 @@
 ﻿using System.Data.Common;
 using Dapper;
-using Eventify.Modules.Events.Application.Abstractions.Data;
-using Eventify.Modules.Events.Application.Abstractions.Messaging;
+using Eventify.Common.Application.Data;
+using Eventify.Common.Application.Messaging;
+using Eventify.Common.Domain;
 using Eventify.Modules.Events.Application.Events.GetEvents;
-using Eventify.Modules.Events.Domain.Abstractions;
 using Eventify.Modules.Events.Domain.Events;
 
 namespace Eventify.Modules.Events.Application.Events.SearchEvents;

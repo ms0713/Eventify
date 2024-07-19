@@ -1,4 +1,4 @@
-﻿using Eventify.Modules.Events.Application.Abstractions.Messaging;
+﻿using Eventify.Common.Application.Messaging;
 using MediatR;
 
 namespace Eventify.Modules.Events.Application.Events.CreateEvent;

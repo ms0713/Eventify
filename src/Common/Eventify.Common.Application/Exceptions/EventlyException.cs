@@ -1,6 +1,6 @@
-﻿using Eventify.Modules.Events.Domain.Abstractions;
+﻿using Eventify.Common.Domain;
 
-namespace Eventify.Modules.Events.Application.Abstractions.Exceptions;
+namespace Eventify.Common.Application.Exceptions;
 
 public sealed class EventifyException : Exception
 {

@@ -1,5 +1,5 @@
-﻿using Eventify.Modules.Events.Application.TicketTypes.UpdateTicketTypePrice;
-using Eventify.Modules.Events.Domain.Abstractions;
+﻿using Eventify.Common.Domain;
+using Eventify.Modules.Events.Application.TicketTypes.UpdateTicketTypePrice;
 using Eventify.Modules.Events.Presentation.ApiResults;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
