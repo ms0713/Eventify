@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Eventify.Common.Presentation\Eventify.Common.Presentation.csproj" />
+    <ProjectReference Include="..\Eventify.Modules.Users.Application\Eventify.Modules.Users.Application.csproj" />
+  </ItemGroup>
+</Project>

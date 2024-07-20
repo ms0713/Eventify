@@ -8,7 +8,7 @@ public abstract class Entity
 
     protected Entity() { }
 
-    public void ClearDomainEvets()
+    public void ClearDomainEvents()
     {
         _domainEvents.Clear();
     }

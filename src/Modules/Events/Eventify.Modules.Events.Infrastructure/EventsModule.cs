@@ -1,4 +1,5 @@
-﻿using Eventify.Common.Presentation.Endpoints;
+﻿using Eventify.Common.Infrastructure.Outbox;
+using Eventify.Common.Presentation.Endpoints;
 using Eventify.Modules.Events.Application.Abstractions.Data;
 using Eventify.Modules.Events.Domain.Categories;
 using Eventify.Modules.Events.Domain.Events;
@@ -32,14 +33,14 @@ public static class EventsModule
     {
         string databaseConnectionString = configuration.GetConnectionString("Database");
 
-        services.AddDbContext<EventsDbContext>(options =>
+        services.AddDbContext<EventsDbContext>((sp, options) =>
         options
         .UseNpgsql(
             databaseConnectionString,
             npgsqlOptions => npgsqlOptions
             .MigrationsHistoryTable(HistoryRepository.DefaultTableName, Schemas.Events))
         .UseSnakeCaseNamingConvention()
-        .AddInterceptors());
+        .AddInterceptors(sp.GetRequiredService<PublishDomainEventsInterceptor>()));
 
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<EventsDbContext>());
         
