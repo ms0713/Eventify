@@ -6,6 +6,7 @@ using Eventify.Common.Infrastructure.Caching;
 using Eventify.Common.Infrastructure.Clock;
 using Eventify.Common.Infrastructure.Data;
 using Eventify.Common.Infrastructure.Outbox;
+using Eventify.Common.Infrastructure.Authentication;
 using MassTransit;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -22,6 +23,7 @@ public static class InfrastructureConfiguration
         string databaseConnectionString,
         string redisConnectionString)
     {
+        services.AddAuthenticationInternal();
 
         NpgsqlDataSource npgsqlDataSource =
             new NpgsqlDataSourceBuilder(databaseConnectionString).Build();
