@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Modules\Events\Eventify.Modules.Events.Infrastructure\Eventify.Modules.Events.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Modules\Ticketing\Eventify.Modules.Ticketing.Infrastructure\Eventify.Modules.Ticketing.Infrastructure.csproj" />
     <ProjectReference Include="..\..\Modules\Users\Eventify.Modules.Users.Infrastructure\Eventify.Modules.Users.Infrastructure.csproj" />
   </ItemGroup>
 

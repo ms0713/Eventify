@@ -4,6 +4,7 @@ using Eventify.Common.Application;
 using Eventify.Common.Infrastructure;
 using Eventify.Common.Presentation.Endpoints;
 using Eventify.Modules.Events.Infrastructure;
+using Eventify.Modules.Ticketing.Infrastructure;
 using Eventify.Modules.Users.Infrastructure;
 using HealthChecks.UI.Client;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
@@ -24,6 +25,7 @@ builder.Services.AddProblemDetails();
 
 builder.Services.AddApplication([
     Eventify.Modules.Events.Application.AssemblyReference.Assembly,
+    Eventify.Modules.Ticketing.Application.AssemblyReference.Assembly,
     Eventify.Modules.Users.Application.AssemblyReference.Assembly]);
 
 string databaseConnectionString = builder.Configuration.GetConnectionString("Database")!;
@@ -33,7 +35,7 @@ builder.Services.AddInfrastructure(
     databaseConnectionString,
     redisConnectionString);
 
-builder.Configuration.AddModuleConfiguration(["events", "users"]);
+builder.Configuration.AddModuleConfiguration(["events", "users", "ticketing"]);
 
 builder.Services.AddHealthChecks()
     .AddNpgSql(databaseConnectionString)
@@ -41,6 +43,7 @@ builder.Services.AddHealthChecks()
 
 builder.Services.AddEventsModule(builder.Configuration);
 builder.Services.AddUsersModule(builder.Configuration);
+builder.Services.AddTicketingModule(builder.Configuration);
 
 
 WebApplication app = builder.Build();
