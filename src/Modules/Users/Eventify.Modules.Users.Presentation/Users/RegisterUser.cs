@@ -1,6 +1,6 @@
 ﻿using Eventify.Common.Domain;
-using Eventify.Common.Presentation.ApiResults;
 using Eventify.Common.Presentation.Endpoints;
+using Eventify.Common.Presentation.Results;
 using Eventify.Modules.Users.Application.Users.RegisterUser;
 using MediatR;
 using Microsoft.AspNetCore.Builder;

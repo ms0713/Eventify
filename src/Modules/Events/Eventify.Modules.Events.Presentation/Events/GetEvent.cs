@@ -1,4 +1,6 @@
-﻿using Eventify.Common.Presentation.Endpoints;
+﻿using Eventify.Common.Domain;
+using Eventify.Common.Presentation.Endpoints;
+using Eventify.Common.Presentation.Results;
 using Eventify.Modules.Events.Application.Events.GetEvent;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -12,9 +14,9 @@ internal sealed class GetEvent : IEndpoint
     {
         app.MapGet("events/{id}", async (Guid id, ISender sender) =>
         {
-            EventResponse @event = await sender.Send(new GetEventQuery(id));
+            Result<EventResponse> result = await sender.Send(new GetEventQuery(id));
 
-            return @event is null ? Results.NotFound() : Results.Ok(@event);
+            return result.Match(Results.Ok, ApiResults.Problem);
         })
         .WithTags(Tags.Events);
     }

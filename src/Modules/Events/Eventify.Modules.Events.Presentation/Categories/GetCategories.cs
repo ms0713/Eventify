@@ -1,7 +1,7 @@
 ﻿using Eventify.Common.Application.Caching;
 using Eventify.Common.Domain;
-using Eventify.Common.Presentation.ApiResults;
 using Eventify.Common.Presentation.Endpoints;
+using Eventify.Common.Presentation.Results;
 using Eventify.Modules.Events.Application.Categories.GetCategories;
 using Eventify.Modules.Events.Application.Categories.GetCategory;
 using MediatR;
@@ -32,7 +32,7 @@ internal sealed class GetCategories : IEndpoint
                 await cacheService.SetAsync("categories", result.Value);
             }
 
-            return result.Match(Results.Ok, Common.Presentation.ApiResults.ApiResults.Problem);
+            return result.Match(Results.Ok, ApiResults.Problem);
         })
         .WithTags(Tags.Categories);
     }

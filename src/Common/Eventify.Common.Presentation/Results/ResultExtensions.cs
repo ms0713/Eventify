@@ -1,6 +1,6 @@
 ﻿using Eventify.Common.Domain;
 
-namespace Eventify.Common.Presentation.ApiResults;
+namespace Eventify.Common.Presentation.Results;
 
 public static class ResultExtensions
 {

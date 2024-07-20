@@ -1,6 +1,6 @@
 ﻿using Eventify.Common.Domain;
-using Eventify.Common.Presentation.ApiResults;
 using Eventify.Common.Presentation.Endpoints;
+using Eventify.Common.Presentation.Results;
 using Eventify.Modules.Events.Application.TicketTypes.GetTicketType;
 using Eventify.Modules.Events.Application.TicketTypes.GetTicketTypes;
 using MediatR;
@@ -19,7 +19,7 @@ internal sealed class GetTicketTypes : IEndpoint
             Result<IReadOnlyCollection<TicketTypeResponse>> result = await sender.Send(
                 new GetTicketTypesQuery(eventId));
 
-            return result.Match(Results.Ok, Common.Presentation.ApiResults.ApiResults.Problem);
+            return result.Match(Results.Ok, ApiResults.Problem);
         })
         .WithTags(Tags.TicketTypes);
     }

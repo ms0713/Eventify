@@ -3,6 +3,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Eventify.Common.Application\Eventify.Common.Application.csproj" />
     <ProjectReference Include="..\Eventify.Modules.Users.Domain\Eventify.Modules.Users.Domain.csproj" />
+    <ProjectReference Include="..\Eventify.Modules.Users.IntegrationEvents\Eventify.Modules.Users.IntegrationEvents.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,6 +1,6 @@
 ﻿using Eventify.Common.Domain;
-using Eventify.Common.Presentation.ApiResults;
 using Eventify.Common.Presentation.Endpoints;
+using Eventify.Common.Presentation.Results;
 using Eventify.Modules.Events.Application.Events.PublishEvent;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -17,7 +17,7 @@ internal sealed class PublishEvent : IEndpoint
         {
             Result result = await sender.Send(new PublishEventCommand(id));
 
-            return result.Match(Results.NoContent, Common.Presentation.ApiResults.ApiResults.Problem);
+            return result.Match(Results.NoContent, ApiResults.Problem);
         })
         .WithTags(Tags.Events);
     }

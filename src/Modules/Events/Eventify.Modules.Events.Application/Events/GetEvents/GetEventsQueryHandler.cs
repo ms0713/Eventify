@@ -3,6 +3,7 @@ using Dapper;
 using Eventify.Common.Application.Data;
 using Eventify.Common.Application.Messaging;
 using Eventify.Common.Domain;
+using Eventify.Modules.Events.Application.Abstractions.Data;
 
 namespace Eventify.Modules.Events.Application.Events.GetEvents;
 

@@ -1,6 +1,6 @@
 ﻿using Eventify.Common.Domain;
-using Eventify.Common.Presentation.ApiResults;
 using Eventify.Common.Presentation.Endpoints;
+using Eventify.Common.Presentation.Results;
 using Eventify.Modules.Events.Application.Events.CreateEvent;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -22,7 +22,7 @@ internal sealed class CreateEvent : IEndpoint
                 request.StartsAtUtc,
                 request.EndsAtUtc));
 
-            return result.Match(Results.Ok, Common.Presentation.ApiResults.ApiResults.Problem);
+            return result.Match(Results.Ok, ApiResults.Problem);
         })
         .WithTags(Tags.Events);
     }
