@@ -1,0 +1,7 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Eventify.Common.Application\Eventify.Common.Application.csproj" />
+    <ProjectReference Include="..\Eventify.Modules.Attendance.Domain\Eventify.Modules.Attendance.Domain.csproj" />
+    <ProjectReference Include="..\Eventify.Modules.Attendance.IntegrationEvents\Eventify.Modules.Attendance.IntegrationEvents.csproj" />
+  </ItemGroup>
+</Project>
