@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Npgsql;
 using StackExchange.Redis;
+using Eventify.Common.Infrastructure.Authorization;
 
 namespace Eventify.Common.Infrastructure;
 
@@ -24,6 +25,8 @@ public static class InfrastructureConfiguration
         string redisConnectionString)
     {
         services.AddAuthenticationInternal();
+
+        services.AddAuthorizationInternal();
 
         NpgsqlDataSource npgsqlDataSource =
             new NpgsqlDataSourceBuilder(databaseConnectionString).Build();

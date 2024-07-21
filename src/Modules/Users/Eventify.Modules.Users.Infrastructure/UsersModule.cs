@@ -1,8 +1,10 @@
-﻿using Eventify.Common.Infrastructure.Outbox;
+﻿using Eventify.Common.Application.Authorization;
+using Eventify.Common.Infrastructure.Outbox;
 using Eventify.Common.Presentation.Endpoints;
 using Eventify.Modules.Users.Application.Abstractions.Data;
 using Eventify.Modules.Users.Application.Abstractions.Identity;
 using Eventify.Modules.Users.Domain.Users;
+using Eventify.Modules.Users.Infrastructure.Authorization;
 using Eventify.Modules.Users.Infrastructure.Database;
 using Eventify.Modules.Users.Infrastructure.Identity;
 using Eventify.Modules.Users.Infrastructure.Users;
@@ -29,6 +31,8 @@ public static class UsersModule
 
     private static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
     {
+        services.AddTransient<IPermissionService, PermissionService>();
+
         services.Configure<KeyCloakOptions>(configuration.GetSection("Users:KeyCloak"));
 
         services.AddTransient<KeyCloakAuthDelegatingHandler>();
