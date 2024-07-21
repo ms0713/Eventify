@@ -19,6 +19,6 @@ internal sealed class GetTicket : IEndpoint
 
             return result.Match(Results.Ok, ApiResults.Problem);
         })
-        .WithTags(Tags.Tickets);
+        .RequireAuthorization().WithTags(Tags.Tickets);
     }
 }

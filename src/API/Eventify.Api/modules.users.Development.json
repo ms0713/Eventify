@@ -1,5 +1,11 @@
 {
   "Users": {
-
+    "KeyCloak": {
+      "AdminUrl": "http://eventify.identity:8080/admin/realms/eventify/",
+      "TokenUrl": "http://eventify.identity:8080/realms/eventify/protocol/openid-connect/token",
+      "ConfidentialClientId": "eventify-confidential-client",
+      "ConfidentialClientSecret": "MD8iLLeUQK2u1rZetMr4ndu3X8oZ4AQX",
+      "PublicClientId": "eventify-public-client"
+    }
   }
 }
