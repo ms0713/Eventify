@@ -1,5 +1,6 @@
 ﻿using Eventify.Common.Infrastructure.Outbox;
 using Eventify.Common.Presentation.Endpoints;
+using Eventify.Modules.Ticketing.Application.Abstractions.Authentication;
 using Eventify.Modules.Ticketing.Application.Abstractions.Data;
 using Eventify.Modules.Ticketing.Application.Abstractions.Payments;
 using Eventify.Modules.Ticketing.Application.Carts;
@@ -8,6 +9,7 @@ using Eventify.Modules.Ticketing.Domain.Events;
 using Eventify.Modules.Ticketing.Domain.Orders;
 using Eventify.Modules.Ticketing.Domain.Payments;
 using Eventify.Modules.Ticketing.Domain.Tickets;
+using Eventify.Modules.Ticketing.Infrastructure.Authentication;
 using Eventify.Modules.Ticketing.Infrastructure.Customers;
 using Eventify.Modules.Ticketing.Infrastructure.Database;
 using Eventify.Modules.Ticketing.Infrastructure.Events;
@@ -15,6 +17,8 @@ using Eventify.Modules.Ticketing.Infrastructure.Orders;
 using Eventify.Modules.Ticketing.Infrastructure.Payments;
 using Eventify.Modules.Ticketing.Infrastructure.Tickets;
 using Eventify.Modules.Ticketing.Presentation.Customers;
+using Eventify.Modules.Ticketing.Presentation.Events;
+using Eventify.Modules.Ticketing.Presentation.TicketTypes;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
@@ -36,6 +40,9 @@ public static class TicketingModule
     public static void ConfigureConsumers(IRegistrationConfigurator registrationConfigurator)
     {
         registrationConfigurator.AddConsumer<UserRegisteredIntegrationEventConsumer>();
+        registrationConfigurator.AddConsumer<UserProfileUpdatedIntegrationEventConsumer>();
+        registrationConfigurator.AddConsumer<EventPublishedIntegrationEventConsumer>();
+        registrationConfigurator.AddConsumer<TicketTypePriceChangedIntegrationEventConsumer>();
     }
 
     private static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
@@ -60,5 +67,8 @@ public static class TicketingModule
 
         services.AddSingleton<CartService>();
         services.AddSingleton<IPaymentService, PaymentService>();
+
+        services.AddScoped<ICustomerContext, CustomerContext>();
+
     }
 }

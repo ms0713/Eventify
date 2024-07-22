@@ -9,7 +9,7 @@ internal sealed class IdentityServiceProvider(
     ILogger<IdentityServiceProvider> logger)
     : IIdentityProviderService
 {
-    private const string PasswordCredentialType = "Password";
+    private const string PasswordCredentialType = "password";
 
     // POST /admin/realms/{realm}/users
     public async Task<Result<string>> RegisterUserAsync(UserModel user, CancellationToken cancellationToken = default)

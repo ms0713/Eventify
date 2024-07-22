@@ -59,23 +59,39 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Users.Inte
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{0E8B2B84-F187-4DA0-80CC-D20E43DFA6B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.ArchitectureTests", "test\Eventify.ArchitectureTests\Eventify.ArchitectureTests.csproj", "{277A12D6-A713-4238-9347-A1C183305BC8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.ArchitectureTests", "test\Eventify.ArchitectureTests\Eventify.ArchitectureTests.csproj", "{277A12D6-A713-4238-9347-A1C183305BC8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Attendance", "Attendance", "{735FCCD0-9AF6-45BC-8DA5-CF2333793905}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Attendance.Domain", "src\Modules\Attendance\Eventify.Modules.Attendance.Domain\Eventify.Modules.Attendance.Domain.csproj", "{CFDB4F99-16FF-4632-A537-DEB4DFEA6B98}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Attendance.Domain", "src\Modules\Attendance\Eventify.Modules.Attendance.Domain\Eventify.Modules.Attendance.Domain.csproj", "{CFDB4F99-16FF-4632-A537-DEB4DFEA6B98}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Attendance.Application", "src\Modules\Attendance\Eventify.Modules.Attendance.Application\Eventify.Modules.Attendance.Application.csproj", "{DE90DB71-362A-4113-B39C-E73F9A25BD9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Attendance.Application", "src\Modules\Attendance\Eventify.Modules.Attendance.Application\Eventify.Modules.Attendance.Application.csproj", "{DE90DB71-362A-4113-B39C-E73F9A25BD9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Attendance.Infrastructure", "src\Modules\Attendance\Eventify.Modules.Attendance.Infrastructure\Eventify.Modules.Attendance.Infrastructure.csproj", "{3EA76506-F4B1-48E4-9D03-DB9340796330}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Attendance.Infrastructure", "src\Modules\Attendance\Eventify.Modules.Attendance.Infrastructure\Eventify.Modules.Attendance.Infrastructure.csproj", "{3EA76506-F4B1-48E4-9D03-DB9340796330}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Attendance.Presentation", "src\Modules\Attendance\Eventify.Modules.Attendance.Presentation\Eventify.Modules.Attendance.Presentation.csproj", "{4EC22CA0-B670-4EAE-B4C2-8A571E1BAD33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Attendance.Presentation", "src\Modules\Attendance\Eventify.Modules.Attendance.Presentation\Eventify.Modules.Attendance.Presentation.csproj", "{4EC22CA0-B670-4EAE-B4C2-8A571E1BAD33}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Attendance.IntegrationEvents", "src\Modules\Attendance\Eventify.Modules.Attendance.IntegrationEvents\Eventify.Modules.Attendance.IntegrationEvents.csproj", "{5EFB1B43-7FD8-40CF-804F-3EEF114D8FC4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Attendance.IntegrationEvents", "src\Modules\Attendance\Eventify.Modules.Attendance.IntegrationEvents\Eventify.Modules.Attendance.IntegrationEvents.csproj", "{5EFB1B43-7FD8-40CF-804F-3EEF114D8FC4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Events.IntegrationEvents", "src\Modules\Events\Eventify.Modules.Events.IntegrationEvents\Eventify.Modules.Events.IntegrationEvents.csproj", "{092F8DD1-9E55-431D-807E-033ADE3483AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Events.IntegrationEvents", "src\Modules\Events\Eventify.Modules.Events.IntegrationEvents\Eventify.Modules.Events.IntegrationEvents.csproj", "{092F8DD1-9E55-431D-807E-033ADE3483AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Ticketing.IntegrationEvents", "src\Modules\Ticketing\Eventify.Modules.Ticketing.IntegrationEvents\Eventify.Modules.Ticketing.IntegrationEvents.csproj", "{7CF53C59-1602-4F81-B671-31D6096AA089}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Ticketing.IntegrationEvents", "src\Modules\Ticketing\Eventify.Modules.Ticketing.IntegrationEvents\Eventify.Modules.Ticketing.IntegrationEvents.csproj", "{7CF53C59-1602-4F81-B671-31D6096AA089}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{35CAC07C-ACFF-47DE-8DF0-2131C147F6CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Users.ArchitectureTests", "src\Modules\Users\test\Eventify.Modules.Users.ArchitectureTests\Eventify.Modules.Users.ArchitectureTests.csproj", "{3FFE902E-4298-4C12-B4A7-165442DED568}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Attendance.ArchitectureTests", "src\Modules\Attendance\test\Eventify.Modules.Attendance.ArchitectureTests\Eventify.Modules.Attendance.ArchitectureTests.csproj", "{9C318941-61AE-433D-88E8-244B0A8E7491}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{8DDCAD99-40A8-4BB7-B7B0-B15209333909}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{05C207F0-8FCA-4357-BA2A-5A6B33F6540A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Events.ArchitectureTests", "src\Modules\Events\test\Evently.Modules.Events.ArchitectureTests\Evently.Modules.Events.ArchitectureTests.csproj", "{D4B5070E-1EE1-4FAA-8C93-1795E73358BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C7B91D49-90F4-45A6-B147-32890ED46C27}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Ticketing.ArchitectureTests", "src\Modules\Ticketing\test\Eventify.Modules.Ticketing.ArchitectureTests\Eventify.Modules.Ticketing.ArchitectureTests.csproj", "{8F2036F4-B84A-4AE6-882B-C6717F845B5E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -309,6 +325,38 @@ Global
 		{7CF53C59-1602-4F81-B671-31D6096AA089}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7CF53C59-1602-4F81-B671-31D6096AA089}.Release|x64.ActiveCfg = Release|Any CPU
 		{7CF53C59-1602-4F81-B671-31D6096AA089}.Release|x64.Build.0 = Release|Any CPU
+		{3FFE902E-4298-4C12-B4A7-165442DED568}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FFE902E-4298-4C12-B4A7-165442DED568}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FFE902E-4298-4C12-B4A7-165442DED568}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{3FFE902E-4298-4C12-B4A7-165442DED568}.Debug|x64.Build.0 = Debug|Any CPU
+		{3FFE902E-4298-4C12-B4A7-165442DED568}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FFE902E-4298-4C12-B4A7-165442DED568}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FFE902E-4298-4C12-B4A7-165442DED568}.Release|x64.ActiveCfg = Release|Any CPU
+		{3FFE902E-4298-4C12-B4A7-165442DED568}.Release|x64.Build.0 = Release|Any CPU
+		{9C318941-61AE-433D-88E8-244B0A8E7491}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C318941-61AE-433D-88E8-244B0A8E7491}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C318941-61AE-433D-88E8-244B0A8E7491}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9C318941-61AE-433D-88E8-244B0A8E7491}.Debug|x64.Build.0 = Debug|Any CPU
+		{9C318941-61AE-433D-88E8-244B0A8E7491}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C318941-61AE-433D-88E8-244B0A8E7491}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9C318941-61AE-433D-88E8-244B0A8E7491}.Release|x64.ActiveCfg = Release|Any CPU
+		{9C318941-61AE-433D-88E8-244B0A8E7491}.Release|x64.Build.0 = Release|Any CPU
+		{D4B5070E-1EE1-4FAA-8C93-1795E73358BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4B5070E-1EE1-4FAA-8C93-1795E73358BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4B5070E-1EE1-4FAA-8C93-1795E73358BB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D4B5070E-1EE1-4FAA-8C93-1795E73358BB}.Debug|x64.Build.0 = Debug|Any CPU
+		{D4B5070E-1EE1-4FAA-8C93-1795E73358BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4B5070E-1EE1-4FAA-8C93-1795E73358BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4B5070E-1EE1-4FAA-8C93-1795E73358BB}.Release|x64.ActiveCfg = Release|Any CPU
+		{D4B5070E-1EE1-4FAA-8C93-1795E73358BB}.Release|x64.Build.0 = Release|Any CPU
+		{8F2036F4-B84A-4AE6-882B-C6717F845B5E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F2036F4-B84A-4AE6-882B-C6717F845B5E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F2036F4-B84A-4AE6-882B-C6717F845B5E}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8F2036F4-B84A-4AE6-882B-C6717F845B5E}.Debug|x64.Build.0 = Debug|Any CPU
+		{8F2036F4-B84A-4AE6-882B-C6717F845B5E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F2036F4-B84A-4AE6-882B-C6717F845B5E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F2036F4-B84A-4AE6-882B-C6717F845B5E}.Release|x64.ActiveCfg = Release|Any CPU
+		{8F2036F4-B84A-4AE6-882B-C6717F845B5E}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -348,6 +396,14 @@ Global
 		{5EFB1B43-7FD8-40CF-804F-3EEF114D8FC4} = {735FCCD0-9AF6-45BC-8DA5-CF2333793905}
 		{092F8DD1-9E55-431D-807E-033ADE3483AF} = {480E11B0-7141-4AAF-881B-1A88CEB8579E}
 		{7CF53C59-1602-4F81-B671-31D6096AA089} = {65B7D771-F26B-4912-81A2-78ADA486EB24}
+		{35CAC07C-ACFF-47DE-8DF0-2131C147F6CC} = {BAD4D1FC-D63D-48B4-A4AC-9D553E25EFE8}
+		{3FFE902E-4298-4C12-B4A7-165442DED568} = {35CAC07C-ACFF-47DE-8DF0-2131C147F6CC}
+		{9C318941-61AE-433D-88E8-244B0A8E7491} = {8DDCAD99-40A8-4BB7-B7B0-B15209333909}
+		{8DDCAD99-40A8-4BB7-B7B0-B15209333909} = {735FCCD0-9AF6-45BC-8DA5-CF2333793905}
+		{05C207F0-8FCA-4357-BA2A-5A6B33F6540A} = {480E11B0-7141-4AAF-881B-1A88CEB8579E}
+		{D4B5070E-1EE1-4FAA-8C93-1795E73358BB} = {05C207F0-8FCA-4357-BA2A-5A6B33F6540A}
+		{C7B91D49-90F4-45A6-B147-32890ED46C27} = {65B7D771-F26B-4912-81A2-78ADA486EB24}
+		{8F2036F4-B84A-4AE6-882B-C6717F845B5E} = {C7B91D49-90F4-45A6-B147-32890ED46C27}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {033740DE-F5F9-4FAF-8374-A605D15EE639}

@@ -1,4 +1,6 @@
-﻿using Eventify.Common.Domain;
+﻿using System.Security.Claims;
+using Eventify.Common.Domain;
+using Eventify.Common.Infrastructure.Authentication;
 using Eventify.Common.Presentation.Endpoints;
 using Eventify.Common.Presentation.Results;
 using Eventify.Modules.Users.Application.Users.UpdateUser;
@@ -13,16 +15,16 @@ internal sealed class UpdateUserProfile : IEndpoint
 {
     public void MapEndpoint(IEndpointRouteBuilder app)
     {
-        app.MapPut("users/{id}/profile", async (Guid id, Request request,  ISender sender) =>
+        app.MapPut("users/profile", async (Request request, ClaimsPrincipal claims, ISender sender) =>
         {
             Result result = await sender.Send(new UpdateUserCommand(
-                id,
+                claims.GetUserId(),
                 request.FirstName,
                 request.LastName));
 
             return result.Match(Results.NoContent, ApiResults.Problem);
         })
-        .RequireAuthorization()
+        .RequireAuthorization(Permissions.ModifyUser)
         .WithTags(Tags.Users);
     }
 

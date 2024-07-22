@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 using Npgsql;
 using StackExchange.Redis;
 using Eventify.Common.Infrastructure.Authorization;
+using Dapper;
 
 namespace Eventify.Common.Infrastructure;
 
@@ -38,6 +39,8 @@ public static class InfrastructureConfiguration
 
         services.TryAddSingleton<IDateTimeProvider, DateTimeProvider>();
 
+        SqlMapper.AddTypeHandler(new GenericArrayHandler<string>());
+
         try
         {
             IConnectionMultiplexer connectionMultiplexer = ConnectionMultiplexer.Connect(redisConnectionString);
@@ -57,9 +60,9 @@ public static class InfrastructureConfiguration
 
         services.AddMassTransit(configure =>
         {
-            foreach (Action<IRegistrationConfigurator> configureConsumer in moduleConfigureConsumers)
+            foreach (Action<IRegistrationConfigurator> configureConsumers in moduleConfigureConsumers)
             {
-                configureConsumer(configure);
+                configureConsumers(configure);
             }
 
             configure.SetKebabCaseEndpointNameFormatter();

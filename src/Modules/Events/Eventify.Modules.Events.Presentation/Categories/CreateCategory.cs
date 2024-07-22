@@ -19,7 +19,8 @@ internal sealed class CreateCategory : IEndpoint
 
             return result.Match(Results.Ok, ApiResults.Problem);
         })
-        .RequireAuthorization().WithTags(Tags.Categories);
+        .RequireAuthorization(Permissions.ModifyCategories)
+        .WithTags(Tags.Categories);
     }
 
     internal sealed class Request

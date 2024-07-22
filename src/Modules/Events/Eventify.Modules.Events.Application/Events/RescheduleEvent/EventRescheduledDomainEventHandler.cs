@@ -1,11 +1,20 @@
-﻿using Eventify.Common.Application.Messaging;
+﻿using Eventify.Common.Application.EventBus;
+using Eventify.Common.Application.Messaging;
 using Eventify.Modules.Events.Domain.Events;
+using Eventify.Modules.Events.IntegrationEvents;
 
 namespace Eventify.Modules.Events.Application.Events.RescheduleEvent;
-internal sealed class EventRescheduledDomainEventHandler : IDomainEventHandler<EventRescheduledDomainEvent>
+internal sealed class EventRescheduledDomainEventHandler(IEventBus eventBus) : IDomainEventHandler<EventRescheduledDomainEvent>
 {
-    public Task Handle(EventRescheduledDomainEvent domainEvent, CancellationToken cancellationToken)
+    public async Task Handle(EventRescheduledDomainEvent domainEvent, CancellationToken cancellationToken)
     {
-        return Task.CompletedTask;
+        await eventBus.PublishAsync(
+            new EventRescheduledIntegrationEvent(
+            domainEvent.Id,
+            domainEvent.OccurredOnUtc,
+            domainEvent.EventId,
+            domainEvent.StartsAtUtc,
+            domainEvent.EndsAtUtc),
+        cancellationToken);
     }
 }

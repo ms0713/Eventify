@@ -4,4 +4,9 @@
     <ProjectReference Include="..\..\..\Common\Eventify.Common.Presentation\Eventify.Common.Presentation.csproj" />
     <ProjectReference Include="..\Eventify.Modules.Users.Application\Eventify.Modules.Users.Application.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Eventify.Modules.Users.IntegrationTests" />
+  </ItemGroup>
+
 </Project>
