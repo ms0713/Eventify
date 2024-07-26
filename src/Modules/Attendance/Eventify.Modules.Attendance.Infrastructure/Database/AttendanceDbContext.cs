@@ -1,4 +1,6 @@
-﻿using Eventify.Modules.Attendance.Application.Abstractions.Data;
+﻿using Eventify.Common.Infrastructure.Inbox;
+using Eventify.Common.Infrastructure.Outbox;
+using Eventify.Modules.Attendance.Application.Abstractions.Data;
 using Eventify.Modules.Attendance.Domain.Attendees;
 using Eventify.Modules.Attendance.Domain.Events;
 using Eventify.Modules.Attendance.Domain.Tickets;
@@ -22,6 +24,10 @@ public sealed class AttendanceDbContext(DbContextOptions<AttendanceDbContext> op
     {
         modelBuilder.HasDefaultSchema(Schemas.Attendance);
 
+        modelBuilder.ApplyConfiguration(new OutboxMessageConfiguration());
+        modelBuilder.ApplyConfiguration(new OutboxMessageConsumerConfiguration());
+        modelBuilder.ApplyConfiguration(new InboxMessageConfiguration());
+        modelBuilder.ApplyConfiguration(new InboxMessageConsumerConfiguration());
         modelBuilder.ApplyConfiguration(new AttendeeConfiguration());
         modelBuilder.ApplyConfiguration(new EventConfiguration());
         modelBuilder.ApplyConfiguration(new TicketConfiguration());

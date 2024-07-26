@@ -1,5 +1,13 @@
 {
   "Users": {
+    "Outbox": {
+      "IntervalInSeconds": 15,
+      "BatchSize": 20
+    },
+    "Inbox": {
+      "IntervalInSeconds": 15,
+      "BatchSize": 20
+    },
     "KeyCloak": {
       "AdminUrl": "http://eventify.identity:8080/admin/realms/eventify/",
       "TokenUrl": "http://eventify.identity:8080/realms/eventify/protocol/openid-connect/token",

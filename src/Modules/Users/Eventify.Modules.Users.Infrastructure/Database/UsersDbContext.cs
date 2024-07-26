@@ -1,4 +1,6 @@
-﻿using Eventify.Modules.Users.Application.Abstractions.Data;
+﻿using Eventify.Common.Infrastructure.Inbox;
+using Eventify.Common.Infrastructure.Outbox;
+using Eventify.Modules.Users.Application.Abstractions.Data;
 using Eventify.Modules.Users.Domain.Users;
 using Eventify.Modules.Users.Infrastructure.Users;
 using Microsoft.EntityFrameworkCore;
@@ -13,6 +15,10 @@ public sealed class UsersDbContext(DbContextOptions<UsersDbContext> options) : D
     {
         modelBuilder.HasDefaultSchema(Schemas.Users);
 
+        modelBuilder.ApplyConfiguration(new OutboxMessageConfiguration());
+        modelBuilder.ApplyConfiguration(new OutboxMessageConsumerConfiguration());
+        modelBuilder.ApplyConfiguration(new InboxMessageConfiguration());
+        modelBuilder.ApplyConfiguration(new InboxMessageConsumerConfiguration());
         modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new RoleConfiguration());
         modelBuilder.ApplyConfiguration(new PermissionConfiguration());

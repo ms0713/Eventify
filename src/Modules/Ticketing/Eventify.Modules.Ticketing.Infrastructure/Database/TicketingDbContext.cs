@@ -1,4 +1,6 @@
 ﻿using System.Data.Common;
+using Eventify.Common.Infrastructure.Inbox;
+using Eventify.Common.Infrastructure.Outbox;
 using Eventify.Modules.Ticketing.Application.Abstractions.Data;
 using Eventify.Modules.Ticketing.Domain.Customers;
 using Eventify.Modules.Ticketing.Domain.Events;
@@ -36,6 +38,10 @@ public sealed class TicketingDbContext(DbContextOptions<TicketingDbContext> opti
     {
         modelBuilder.HasDefaultSchema(Schemas.Ticketing);
 
+        modelBuilder.ApplyConfiguration(new OutboxMessageConfiguration());
+        modelBuilder.ApplyConfiguration(new OutboxMessageConsumerConfiguration());
+        modelBuilder.ApplyConfiguration(new InboxMessageConfiguration());
+        modelBuilder.ApplyConfiguration(new InboxMessageConsumerConfiguration());
         modelBuilder.ApplyConfiguration(new CustomerConfiguration());
         modelBuilder.ApplyConfiguration(new EventConfiguration());
         modelBuilder.ApplyConfiguration(new TicketTypeConfiguration());

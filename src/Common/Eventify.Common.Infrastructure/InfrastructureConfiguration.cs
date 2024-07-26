@@ -14,6 +14,7 @@ using Npgsql;
 using StackExchange.Redis;
 using Eventify.Common.Infrastructure.Authorization;
 using Dapper;
+using Quartz;
 
 namespace Eventify.Common.Infrastructure;
 
@@ -35,11 +36,15 @@ public static class InfrastructureConfiguration
 
         services.TryAddScoped<IDbConnectionFactory, DbConnectionFactory>();
 
-        services.TryAddSingleton<PublishDomainEventsInterceptor>();
+        services.TryAddSingleton<InsertOutboxMessagesInterceptor>();
 
         services.TryAddSingleton<IDateTimeProvider, DateTimeProvider>();
 
         SqlMapper.AddTypeHandler(new GenericArrayHandler<string>());
+
+        services.AddQuartz();
+
+        services.AddQuartzHostedService(options => options.WaitForJobsToComplete = true);
 
         try
         {
