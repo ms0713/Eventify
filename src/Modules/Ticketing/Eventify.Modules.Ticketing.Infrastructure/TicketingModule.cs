@@ -21,9 +21,6 @@ using Eventify.Modules.Ticketing.Infrastructure.Orders;
 using Eventify.Modules.Ticketing.Infrastructure.Outbox;
 using Eventify.Modules.Ticketing.Infrastructure.Payments;
 using Eventify.Modules.Ticketing.Infrastructure.Tickets;
-using Eventify.Modules.Ticketing.Presentation.Customers;
-using Eventify.Modules.Ticketing.Presentation.Events;
-using Eventify.Modules.Ticketing.Presentation.TicketTypes;
 using Eventify.Modules.Users.IntegrationEvents;
 using MassTransit;
 using Microsoft.EntityFrameworkCore;
@@ -54,6 +51,7 @@ public static class TicketingModule
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<UserProfileUpdatedIntegrationEvent>>();
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<EventPublishedIntegrationEvent>>();
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<TicketTypePriceChangedIntegrationEvent>>();
+        registrationConfigurator.AddConsumer<IntegrationEventConsumer<EventCancellationStartedIntegrationEvent>>();
     }
 
     private static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)

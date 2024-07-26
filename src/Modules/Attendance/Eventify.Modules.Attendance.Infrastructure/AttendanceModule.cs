@@ -14,9 +14,6 @@ using Eventify.Modules.Attendance.Infrastructure.Events;
 using Eventify.Modules.Attendance.Infrastructure.Inbox;
 using Eventify.Modules.Attendance.Infrastructure.Outbox;
 using Eventify.Modules.Attendance.Infrastructure.Tickets;
-using Eventify.Modules.Attendance.Presentation.Attendees;
-using Eventify.Modules.Attendance.Presentation.Events;
-using Eventify.Modules.Attendance.Presentation.Tickets;
 using Eventify.Modules.Events.IntegrationEvents;
 using Eventify.Modules.Ticketing.IntegrationEvents;
 using Eventify.Modules.Users.IntegrationEvents;
@@ -52,6 +49,7 @@ public static class AttendanceModule
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<UserProfileUpdatedIntegrationEvent>>();
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<EventPublishedIntegrationEvent>>();
         registrationConfigurator.AddConsumer<IntegrationEventConsumer<TicketIssuedIntegrationEvent>>();
+        registrationConfigurator.AddConsumer<IntegrationEventConsumer<EventCancellationStartedIntegrationEvent>>();
     }
 
     private static void AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
