@@ -12,6 +12,8 @@ using Eventify.Modules.Events.Infrastructure.Events;
 using Eventify.Modules.Events.Infrastructure.Inbox;
 using Eventify.Modules.Events.Infrastructure.Outbox;
 using Eventify.Modules.Events.Infrastructure.TicketTypes;
+using Eventify.Modules.Events.Presentation.Events.CancelEventSaga;
+using MassTransit;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.Extensions.Configuration;
@@ -34,6 +36,12 @@ public static class EventsModule
         services.AddInfrastructure(configuration);
 
         return services;
+    }
+    public static Action<IRegistrationConfigurator> ConfigureConsumers(string redisConnectionString)
+    {
+        return registrationConfigurator => registrationConfigurator
+            .AddSagaStateMachine<CancelEventSaga, CancelEventState>()
+            .RedisRepository(redisConnectionString);
     }
 
     private static void AddInfrastructure(

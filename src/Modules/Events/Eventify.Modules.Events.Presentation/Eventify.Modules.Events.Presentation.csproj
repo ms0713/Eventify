@@ -1,7 +1,12 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Eventify.Common.Presentation\Eventify.Common.Presentation.csproj" />
+    <ProjectReference Include="..\..\Ticketing\Eventify.Modules.Ticketing.IntegrationEvents\Eventify.Modules.Ticketing.IntegrationEvents.csproj" />
     <ProjectReference Include="..\Eventify.Modules.Events.Application\Eventify.Modules.Events.Application.csproj" />
   </ItemGroup>
 
