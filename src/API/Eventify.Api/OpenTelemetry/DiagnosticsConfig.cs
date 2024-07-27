@@ -2,5 +2,5 @@
 
 public static class DiagnosticsConfig
 {
-    public const string ServiceName = "Eventify";
+    public const string ServiceName = "Eventify.Api";
 }

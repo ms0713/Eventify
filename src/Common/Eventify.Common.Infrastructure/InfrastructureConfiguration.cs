@@ -15,6 +15,8 @@ using StackExchange.Redis;
 using Eventify.Common.Infrastructure.Authorization;
 using Dapper;
 using Quartz;
+using OpenTelemetry.Resources;
+using OpenTelemetry.Trace;
 
 namespace Eventify.Common.Infrastructure;
 
@@ -22,6 +24,7 @@ public static class InfrastructureConfiguration
 {
     public static IServiceCollection AddInfrastructure(
         this IServiceCollection services,
+        string serviceName,
         Action<IRegistrationConfigurator>[] moduleConfigureConsumers,
         string databaseConnectionString,
         string redisConnectionString)
@@ -54,12 +57,12 @@ public static class InfrastructureConfiguration
         try
         {
             IConnectionMultiplexer connectionMultiplexer = ConnectionMultiplexer.Connect(redisConnectionString);
-            services.TryAddSingleton(connectionMultiplexer);
+            services.AddSingleton(connectionMultiplexer);
 
             services.AddStackExchangeRedisCache(options =>
                 options.ConnectionMultiplexerFactory = () => Task.FromResult(connectionMultiplexer));
         }
-        catch 
+        catch
         {
             services.AddDistributedMemoryCache();
         }
@@ -81,6 +84,22 @@ public static class InfrastructureConfiguration
             {
                 cfg.ConfigureEndpoints(context);
             });
+        });
+
+        services
+        .AddOpenTelemetry()
+        .ConfigureResource(resource => resource.AddService(serviceName))
+        .WithTracing(tracing =>
+        {
+            tracing
+                .AddAspNetCoreInstrumentation()
+                .AddHttpClientInstrumentation()
+                .AddEntityFrameworkCoreInstrumentation()
+                .AddRedisInstrumentation()
+                .AddNpgsql()
+                .AddSource(MassTransit.Logging.DiagnosticHeaders.DefaultListenerName);
+
+            tracing.AddOtlpExporter();
         });
 
         return services;

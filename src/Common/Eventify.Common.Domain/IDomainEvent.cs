@@ -1,8 +1,6 @@
-﻿using MediatR;
+﻿namespace Eventify.Common.Domain;
 
-namespace Eventify.Common.Domain;
-
-public interface IDomainEvent : INotification
+public interface IDomainEvent
 {
     Guid Id { get; }
     DateTime OccurredOnUtc { get; }

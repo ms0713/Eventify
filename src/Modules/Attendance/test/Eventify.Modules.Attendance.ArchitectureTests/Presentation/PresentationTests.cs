@@ -7,7 +7,7 @@ namespace Eventify.Modules.Attendance.ArchitectureTests.Presentation;
 public class PresentationTests : BaseTest
 {
     [Fact]
-    public void IntegrationEventConsumer_Should_NotBePublic()
+    public void IntegrationEventHandler_Should_NotBePublic()
     {
         Types.InAssembly(PresentationAssembly)
             .That()
@@ -21,7 +21,7 @@ public class PresentationTests : BaseTest
     }
 
     [Fact]
-    public void IntegrationEventConsumer_Should_BeSealed()
+    public void IntegrationEventHandler_Should_BeSealed()
     {
         Types.InAssembly(PresentationAssembly)
             .That()
@@ -33,7 +33,7 @@ public class PresentationTests : BaseTest
     }
 
     [Fact]
-    public void IntegrationEventConsumer_ShouldHave_NameEndingWith_IntegrationEventConsumer()
+    public void IntegrationEventHandler_ShouldHave_NameEndingWith_DomainEventHandler()
     {
         Types.InAssembly(PresentationAssembly)
             .That()

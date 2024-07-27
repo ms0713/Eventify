@@ -7,7 +7,7 @@ using FluentAssertions;
 
 namespace Eventify.IntegrationTests.RegisterUser;
 
-public class RegisterUserTests : BaseIntegrationTest
+public sealed class RegisterUserTests : BaseIntegrationTest
 {
     public RegisterUserTests(IntegrationTestWebAppFactory factory)
         : base(factory)

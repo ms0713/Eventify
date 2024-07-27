@@ -2,6 +2,7 @@ using System.Reflection;
 using Eventify.Api.Extensions;
 using Eventify.Api.Extentions;
 using Eventify.Api.Middleware;
+using Eventify.Api.OpenTelemetry;
 using Eventify.Common.Application;
 using Eventify.Common.Infrastructure;
 using Eventify.Common.Infrastructure.Configuration;
@@ -36,6 +37,7 @@ string databaseConnectionString = builder.Configuration.GetConnectionStringOrThr
 string redisConnectionString = builder.Configuration.GetConnectionStringOrThrow("Cache");
 
 builder.Services.AddInfrastructure(
+    DiagnosticsConfig.ServiceName,
     [
         EventsModule.ConfigureConsumers(redisConnectionString),
         TicketingModule.ConfigureConsumers,
@@ -46,12 +48,10 @@ builder.Services.AddInfrastructure(
 
 builder.Configuration.AddModuleConfiguration(["events", "users", "ticketing", "attendance"]);
 
-Uri keyCloakHealthUrl = builder.Configuration.GetKeyCloakHealthUrl();
-
 builder.Services.AddHealthChecks()
     .AddNpgSql(databaseConnectionString)
     .AddRedis(redisConnectionString)
-    .AddKeyCloak(keyCloakHealthUrl);
+    .AddKeyCloak(builder.Configuration.GetKeyCloakHealthUrl());
 
 builder.Services.AddEventsModule(builder.Configuration);
 builder.Services.AddUsersModule(builder.Configuration);
@@ -75,6 +75,8 @@ app.MapHealthChecks("health", new HealthCheckOptions
 {
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
+
+app.UseLogContext();
 
 app.UseSerilogRequestLogging();
 

@@ -2,4 +2,9 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Eventify.Common.Domain\Eventify.Common.Domain.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <InternalsVisibleTo Include="Eventify.Modules.Attendance.UnitTests" />
+    <InternalsVisibleTo Include="Eventify.UnitTests" />
+  </ItemGroup>
+
 </Project>

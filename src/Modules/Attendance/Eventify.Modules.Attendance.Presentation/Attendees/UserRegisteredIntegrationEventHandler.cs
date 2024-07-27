@@ -3,7 +3,6 @@ using Eventify.Common.Application.Exceptions;
 using Eventify.Common.Domain;
 using Eventify.Modules.Attendance.Application.Attendees.CreateAttendee;
 using Eventify.Modules.Users.IntegrationEvents;
-using MassTransit;
 using MediatR;
 
 namespace Eventify.Modules.Attendance.Presentation.Attendees;
