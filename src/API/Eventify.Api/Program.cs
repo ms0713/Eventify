@@ -6,6 +6,7 @@ using Eventify.Api.OpenTelemetry;
 using Eventify.Common.Application;
 using Eventify.Common.Infrastructure;
 using Eventify.Common.Infrastructure.Configuration;
+using Eventify.Common.Infrastructure.EventBus;
 using Eventify.Common.Presentation.Endpoints;
 using Eventify.Modules.Attendance.Infrastructure;
 using Eventify.Modules.Events.Infrastructure;
@@ -35,6 +36,7 @@ builder.Services.AddApplication(moduleApplicationAssemblies);
 
 string databaseConnectionString = builder.Configuration.GetConnectionStringOrThrow("Database");
 string redisConnectionString = builder.Configuration.GetConnectionStringOrThrow("Cache");
+var rabbitMqSettings = new RabbitMqSettings(builder.Configuration.GetConnectionStringOrThrow("Queue"));
 
 builder.Services.AddInfrastructure(
     DiagnosticsConfig.ServiceName,
@@ -43,6 +45,7 @@ builder.Services.AddInfrastructure(
         TicketingModule.ConfigureConsumers,
         AttendanceModule.ConfigureConsumers
     ],
+    rabbitMqSettings,
     databaseConnectionString,
     redisConnectionString);
 
@@ -51,6 +54,7 @@ builder.Configuration.AddModuleConfiguration(["events", "users", "ticketing", "a
 builder.Services.AddHealthChecks()
     .AddNpgSql(databaseConnectionString)
     .AddRedis(redisConnectionString)
+    .AddRabbitMQ(rabbitConnectionString: rabbitMqSettings.Host)
     .AddKeyCloak(builder.Configuration.GetKeyCloakHealthUrl());
 
 builder.Services.AddEventsModule(builder.Configuration);
@@ -76,7 +80,7 @@ app.MapHealthChecks("health", new HealthCheckOptions
     ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
 });
 
-app.UseLogContext();
+app.UseLogContextTraceLogging();
 
 app.UseSerilogRequestLogging();
 
