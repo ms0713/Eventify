@@ -93,23 +93,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{C7B91D49-9
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Ticketing.ArchitectureTests", "src\Modules\Ticketing\test\Eventify.Modules.Ticketing.ArchitectureTests\Eventify.Modules.Ticketing.ArchitectureTests.csproj", "{8F2036F4-B84A-4AE6-882B-C6717F845B5E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Evently.Modules.Events.UnitTests", "src\Modules\Events\test\Evently.Modules.Events.UnitTests\Evently.Modules.Events.UnitTests.csproj", "{5DF8831C-3733-4F70-9855-9276164407FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Evently.Modules.Events.UnitTests", "src\Modules\Events\test\Evently.Modules.Events.UnitTests\Evently.Modules.Events.UnitTests.csproj", "{5DF8831C-3733-4F70-9855-9276164407FD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Users.IntegrationTests", "src\Modules\Users\test\Eventify.Modules.Users.IntegrationTests\Eventify.Modules.Users.IntegrationTests.csproj", "{2AEF6DB1-FDC0-44B3-A85C-5EC068CF7162}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Users.IntegrationTests", "src\Modules\Users\test\Eventify.Modules.Users.IntegrationTests\Eventify.Modules.Users.IntegrationTests.csproj", "{2AEF6DB1-FDC0-44B3-A85C-5EC068CF7162}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.IntegrationTests", "test\Eventify.IntegrationTests\Eventify.IntegrationTests.csproj", "{25C1A6AB-E455-4B23-BC6D-D9600593F0B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.IntegrationTests", "test\Eventify.IntegrationTests\Eventify.IntegrationTests.csproj", "{25C1A6AB-E455-4B23-BC6D-D9600593F0B3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Attendance.UnitTests", "src\Modules\Attendance\test\Eventify.Modules.Attendance.UnitTests\Eventify.Modules.Attendance.UnitTests.csproj", "{9647A5EA-2408-427B-8CCA-5B534DD00900}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Attendance.UnitTests", "src\Modules\Attendance\test\Eventify.Modules.Attendance.UnitTests\Eventify.Modules.Attendance.UnitTests.csproj", "{9647A5EA-2408-427B-8CCA-5B534DD00900}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Ticketing.UnitTests", "src\Modules\Ticketing\test\Eventify.Modules.Ticketing.UnitTests\Eventify.Modules.Ticketing.UnitTests.csproj", "{E280D2DF-24AD-456E-8433-E46EA2597DB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Ticketing.UnitTests", "src\Modules\Ticketing\test\Eventify.Modules.Ticketing.UnitTests\Eventify.Modules.Ticketing.UnitTests.csproj", "{E280D2DF-24AD-456E-8433-E46EA2597DB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Users.UnitTests", "src\Modules\Users\test\Eventify.Modules.Users.UnitTests\Eventify.Modules.Users.UnitTests.csproj", "{5D5076F7-6957-4658-AD80-85A7AF91F12E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Users.UnitTests", "src\Modules\Users\test\Eventify.Modules.Users.UnitTests\Eventify.Modules.Users.UnitTests.csproj", "{5D5076F7-6957-4658-AD80-85A7AF91F12E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Attendance.IntegrationTests", "src\Modules\Attendance\test\Eventify.Modules.Attendance.IntegrationTests\Eventify.Modules.Attendance.IntegrationTests.csproj", "{40508FE8-554D-4564-BD05-2D2EC3750AB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Attendance.IntegrationTests", "src\Modules\Attendance\test\Eventify.Modules.Attendance.IntegrationTests\Eventify.Modules.Attendance.IntegrationTests.csproj", "{40508FE8-554D-4564-BD05-2D2EC3750AB3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Events.IntegrationTests", "src\Modules\Events\test\Eventify.Modules.Events.IntegrationTests\Eventify.Modules.Events.IntegrationTests.csproj", "{C7B3E42B-46C2-4107-9C33-F66CE4B7032A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Events.IntegrationTests", "src\Modules\Events\test\Eventify.Modules.Events.IntegrationTests\Eventify.Modules.Events.IntegrationTests.csproj", "{C7B3E42B-46C2-4107-9C33-F66CE4B7032A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Modules.Ticketing.IntegrationTests", "src\Modules\Ticketing\test\Eventify.Modules.Ticketing.IntegrationTests\Eventify.Modules.Ticketing.IntegrationTests.csproj", "{F9A5EDCC-5150-46E2-BD46-514A10636BF8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Eventify.Modules.Ticketing.IntegrationTests", "src\Modules\Ticketing\test\Eventify.Modules.Ticketing.IntegrationTests\Eventify.Modules.Ticketing.IntegrationTests.csproj", "{F9A5EDCC-5150-46E2-BD46-514A10636BF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Eventify.Gateway", "src\API\Eventify.Gateway\Eventify.Gateway.csproj", "{EC7A5CF1-25A0-49F8-A201-6814AF39FDF5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -447,6 +449,14 @@ Global
 		{F9A5EDCC-5150-46E2-BD46-514A10636BF8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F9A5EDCC-5150-46E2-BD46-514A10636BF8}.Release|x64.ActiveCfg = Release|Any CPU
 		{F9A5EDCC-5150-46E2-BD46-514A10636BF8}.Release|x64.Build.0 = Release|Any CPU
+		{EC7A5CF1-25A0-49F8-A201-6814AF39FDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC7A5CF1-25A0-49F8-A201-6814AF39FDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC7A5CF1-25A0-49F8-A201-6814AF39FDF5}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EC7A5CF1-25A0-49F8-A201-6814AF39FDF5}.Debug|x64.Build.0 = Debug|Any CPU
+		{EC7A5CF1-25A0-49F8-A201-6814AF39FDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC7A5CF1-25A0-49F8-A201-6814AF39FDF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC7A5CF1-25A0-49F8-A201-6814AF39FDF5}.Release|x64.ActiveCfg = Release|Any CPU
+		{EC7A5CF1-25A0-49F8-A201-6814AF39FDF5}.Release|x64.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -503,6 +513,7 @@ Global
 		{40508FE8-554D-4564-BD05-2D2EC3750AB3} = {8DDCAD99-40A8-4BB7-B7B0-B15209333909}
 		{C7B3E42B-46C2-4107-9C33-F66CE4B7032A} = {05C207F0-8FCA-4357-BA2A-5A6B33F6540A}
 		{F9A5EDCC-5150-46E2-BD46-514A10636BF8} = {C7B91D49-90F4-45A6-B147-32890ED46C27}
+		{EC7A5CF1-25A0-49F8-A201-6814AF39FDF5} = {EDC05AA9-D60D-42E5-B708-BFF33002A01E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {033740DE-F5F9-4FAF-8374-A605D15EE639}

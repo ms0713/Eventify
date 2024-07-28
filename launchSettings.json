@@ -4,7 +4,8 @@
       "commandName": "DockerCompose",
       "commandVersion": "1.0",
       "serviceActions": {
-        "eventify.api": "StartDebugging"
+        "eventify.api": "StartDebugging",
+        "eventify.gateway": "StartDebugging"
       }
     }
   }

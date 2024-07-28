@@ -11,6 +11,16 @@ services:
        - 5000:8080
        - 5001:8081 
 
+  eventify.gateway:
+    image: ${DOCKER_REGISTRY-}eventifygateway
+    container_name: Eventify.Gateway
+    build:
+      context: .
+      dockerfile: src/API/Eventify.Gateway/Dockerfile
+    ports:
+       - 3000:8080
+       - 3001:8081 
+
   eventify.database:
     image: postgres:latest
     container_name: Eventify.Database
@@ -76,3 +86,4 @@ services:
       - 5672:5672
       - 15672:15672
  
+

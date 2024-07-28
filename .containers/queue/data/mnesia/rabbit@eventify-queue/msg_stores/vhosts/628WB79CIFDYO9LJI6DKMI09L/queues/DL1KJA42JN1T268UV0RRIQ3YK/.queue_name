@@ -1,0 +1,2 @@
+VHOST: /
+QUEUE: event-published-integration-event-eventify-api
